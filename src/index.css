@@ -1,0 +1,66 @@
+@import "tailwindcss";
+
+/* Theme colours live in CSS variables. The .dark class swaps their values. */
+:root {
+  --bg: #f6f8f3;
+  --fg: #12201a;
+  --muted: #4f6158;
+  --card: #ffffff;
+  --line: #d9e1d6;
+  --brand: #1f5b3f;
+  --on-brand: #ffffff;
+  --accent: #e86f12;
+}
+
+.dark {
+  --bg: #0d1612;
+  --fg: #e8efe6;
+  --muted: #9db0a4;
+  --card: #14221b;
+  --line: #24362c;
+  --brand: #5fb88a;
+  --on-brand: #0d1612;
+  --accent: #f08a3c;
+}
+
+/* Lets Tailwind classes like bg-bg and text-brand use the variables above. */
+@theme inline {
+  --color-bg: var(--bg);
+  --color-fg: var(--fg);
+  --color-muted: var(--muted);
+  --color-card: var(--card);
+  --color-line: var(--line);
+  --color-brand: var(--brand);
+  --color-on-brand: var(--on-brand);
+  --color-accent: var(--accent);
+  --font-display: "Fraunces", Georgia, serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--bg);
+  color: var(--fg);
+  font-family: "Figtree", system-ui, sans-serif;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+:focus-visible {
+  outline: 3px solid var(--accent);
+  outline-offset: 3px;
+}
+
+/* No custom cursor on touch screens. */
+@media (pointer: coarse) {
+  .cursor-ring {
+    display: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
