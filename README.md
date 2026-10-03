@@ -1,50 +1,35 @@
 # Tula's International School (TIS) - Homepage Redesign
 
-A modern, animated, mobile-first redesign of the Tula's International School homepage. The school's name, colours (orange and green) and copy are kept. Content comes from tis.edu.in.
+A modern, animated, mobile-first redesign of the Tula's International School homepage. School name, orange and green colours, and content are kept from tis.edu.in.
 
 ## Live Demo
-- **Live URL:** [Add Vercel link here]
-- **Repository:** [Add GitHub repo link here]
+- **Live URL:** https://tis-homepage-redesign-puce.vercel.app
+- **Repository:** https://github.com/pasupulatiharshitha-jpg/-tis-homepage-redesign
 
 ## Tech Stack
-- **Framework:** React 19 with Vite
-- **Styling:** Tailwind CSS v4 (colours are CSS variables, so the theme switch is one class)
-- **Animations:** Framer Motion
-- **Icons:** Lucide React
-- **Deployment:** Vercel
+- React 19 with Vite
+- Tailwind CSS v4
+- Framer Motion
+- Lucide React
+- Deployed on Vercel
 
 ## Standout Features
-1. **Custom cursor:** a ring follows the mouse (smoothed with `useSpring`) and grows over links and buttons. Hidden on touch screens.
-2. **Scroll-triggered reveals:** a reusable `Reveal` component using `whileInView`, with staggered delays in lists. Plays once.
-3. **Dark/light theme switcher:** the `useTheme` hook saves the choice in `localStorage` and falls back to the system setting.
-4. **Scroll progress bar:** `useScroll` + `useSpring` drive a bar fixed to the top of the page.
-
-Motion respects `prefers-reduced-motion` through `MotionConfig`.
+1. **Custom cursor:** a ring follows the mouse and grows over links and buttons. Hidden on touch screens.
+2. **Scroll-triggered reveals:** a reusable Reveal component using whileInView.
+3. **Dark/light theme switcher:** saved in localStorage.
+4. **Scroll progress bar:** built with useScroll and useSpring.
 
 ## Getting Started Locally
-1. Clone the repository
-   ```bash
-   git clone https://github.com/your-username/tis-homepage-redesign.git
-   cd tis-homepage-redesign
-   ```
-2. Install dependencies
-   ```bash
-   npm install
-   ```
-3. Start the dev server
-   ```bash
-   npm run dev
-   ```
-4. Open the local address shown in the terminal (usually http://localhost:5173).
+1. Clone the repository: git clone https://github.com/pasupulatiharshitha-jpg/-tis-homepage-redesign.git
+2. Install dependencies: npm install
+3. Start the dev server: npm run dev
+4. Open http://localhost:5173 in your browser.
 
-Production build: `npm run build`, then `npm run preview`.
+Production build: npm run build
 
-## Component Architecture
-- `src/components/ui/` - small reusable pieces (`Button`, `Section`)
-- `src/components/sections/` - page sections (Navbar, Hero, About, Recognition, Academics, Admissions, Footer)
-- `src/components/animation/` - animation helpers (`Reveal`, `ScrollProgress`, `Cursor`)
-- `src/hooks/useTheme.js` - theme state and persistence
-- `src/data/content.js` - all page text in one place
-
-## Brand Identity Retained
-Orange and green palette, the "Modern Gurukul" idea, and copy and facts from tis.edu.in.
+## Folder Structure
+- src/components/ui - Button, Section
+- src/components/sections - Navbar, Hero, About, Recognition, Academics, Admissions, Footer
+- src/components/animation - Reveal, ScrollProgress, Cursor
+- src/hooks/useTheme.js - theme logic
+- src/data/content.js - all page text
